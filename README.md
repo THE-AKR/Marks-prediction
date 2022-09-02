@@ -5,4 +5,4 @@ This system aims to predict student's marks using linear regression. The idea be
 analysis is to predict the marks of students by their studying hours. Through this project 
 we can determine:
 • How many hours need to do the study to get 99% marks
-• If you will do study x () hours per day so how much marks you will get
+• If you will do study x () hours per day so how much marks you will get.
