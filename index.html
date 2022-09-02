@@ -1,0 +1,128 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Student Mark Predictor ML App</title>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background: burlywood ;
+      font-family: 'Carter One', cursive;
+      color: white;
+      background-image: radial-gradient(circle 610px at 5.2% 51.6%, rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5%);
+    }
+    
+
+    h1{
+      text-align:center;
+      background: url("https://www.dropbox.com/s/no8atv0foc1zrw0/giphy%20%2814%29.gif?dl=1");
+      background-size: cover;
+      background-position: center;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-stroke:1px burlywood;
+    }
+
+    h2{
+      margin-top:90px;
+      background: url("https://www.dropbox.com/s/3sdknw83yff12l9/giphy%20%2810%29.gif?dl=1");
+      background-size: cover;
+      background-position: center;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-stroke:1px yellow;
+
+    }
+
+    button{
+      text-decoration: none;
+      color: white;
+      border: 2px solid black;
+      padding: 15px;
+      margin-top:50px;
+      box-shadow: 1px 1px 0px #4b0082;
+      background-image: linear-gradient(to left bottom, #8a2Be2 , black, #9400d3);
+  }
+
+  button:hover{
+    text-decoration: none;
+    color: white;
+    border: 4px solid #8a2Be2;
+    outline: 3px solid #8a2Be2;
+    outline-offset: 10px;
+    transform: rotate(10deg);
+    transition: 1s;
+}
+
+h3{
+  margin-top: 40px;
+  font-size: 2rem;
+}
+
+input{
+  position:absolute;
+  top:200px;
+  left:45%;
+  
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Oxstandhard Univercity Banner-->
+  <div>
+   <h1> Student Marks Prediction System </h1>
+  </div>
+
+ 
+ 
+ <div class="login">
+	
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h2> Enter Your Study Hours to Predict Marks </h2>
+        
+    	<input align="center" type="number" name="study_hours" placeholder="study hours" required="required" width="48" height="10"/>
+    	<br>
+        
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="http://bit.ly/breast-cancer-ml-project" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Marks</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h3>{{ prediction_text }}</h3>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+<script>
+  responsiveVoice.speak('Enter Your Study hours to predict MArks');
+
+</script>
+</html>
